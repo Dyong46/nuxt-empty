@@ -1,14 +1,12 @@
 <template>
-	<div>
-		<v-app>
-			<v-main>
-				<client-nav-bar />
-				<div>
-					<slot />
-				</div>
-			</v-main>
-		</v-app>
-	</div>
+	<v-app>
+		<client-nav-bar />
+		<v-main>
+			<div>
+				<slot />
+			</div>
+		</v-main>
+	</v-app>
 </template>
 
 <script>
