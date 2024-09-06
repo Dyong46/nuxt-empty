@@ -1,5 +1,5 @@
 <template>
-    <v-sheet width="100%" height="auto" class="pa-4 rounded-lg" color="#F5F5F5">
+    <v-sheet width="100%" height="auto" class="pa-3 rounded-lg" color="#F5F5F5">
         <v-card class="rounded-lg" style="color: #123873;" height="100%" width="100%" flat>
             <h3 class="ml-5 mt-4 mb-3">Rent A Boat</h3>
             <v-stepper-vertical v-model="currentStep" flat hide-actions>
@@ -13,10 +13,10 @@
                     style="color: #123873;"
                 >
                 <template v-slot:title>
-                    <div class="ml-2 text-caption font-weight-bold">STEP {{ index + 1 }}</div>                
+                    <div style="font-size: 12px;" class="ml-1 font-weight-bold">STEP {{ index + 1 }}</div>                
                 </template>
                 <template v-slot:subtitle>
-                    <div class="ml-2 text-body-2 font-weight-bold">{{ item.text }}</div>                
+                    <div style="white-space: nowrap; overflow: hidden; font-weight: 600; font-size: 14px;" class="mt-1 ml-1">{{ item.text }}</div>                
                 </template>
                 </v-stepper-vertical-item>
             </v-stepper-vertical>
@@ -29,6 +29,7 @@
 </template>
   
 <script>
+import { mapFields } from "vuex-map-fields";
 import { VStepperVertical, VStepperVerticalItem } from 'vuetify/labs/VStepperVertical'
 export default {
     components: {
@@ -53,9 +54,11 @@ export default {
                     text: "Terms of use"
                 },
             ],
-            currentStep: 3
         };
     },
+    computed: {
+		...mapFields("booking", ["currentStep"])
+	},
     methods: {
         nextStep() {
             if (this.currentStep < this.steps.length) {
@@ -71,6 +74,10 @@ export default {
 };
 </script>
 <style scoped>
+::v-deep .v-expansion-panel-title {
+    padding-right: 0px;
+    padding-left: 10px;
+}
 ::v-deep .v-stepper-vertical-item__avatar {
     background: transparent !important;
 }
@@ -94,6 +101,7 @@ export default {
 }
 ::v-deep .v-expansion-panel::before {
     height: calc(100% - 40px);
-    top: 55px;
+    top: 50px;
+    left: 21px;
 }
 </style>

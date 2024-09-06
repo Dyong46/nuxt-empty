@@ -1,50 +1,52 @@
 <template>
-	<v-app-bar
-		fixed
-		app 
-		absolute
-		elevation="0"
-		height="100"
-		class="px-5"
-	>
-		<v-app-bar-title class="d-flex font-weight-bold ms-0">
-			<v-img
-				width="130"
-				src="/images/logo.png"
-			></v-img>
-		</v-app-bar-title>
+	<div>
+		<v-app-bar
+			fixed
+			app 
+			absolute
+			elevation="0"
+			height="100"
+			class="px-5"
+		>
+			<v-app-bar-title class="d-flex font-weight-bold ms-0">
+				<v-img
+					width="130"
+					src="/images/logo.png"
+				></v-img>
+			</v-app-bar-title>
 
-		<v-spacer />
-		
-		<div class="d-flex justify-end align-center">
-			<nuxt-link
-				v-for="(val, key) in nav"
+			<v-spacer />
+			
+			<div class="d-flex justify-end align-center">
+				<nuxt-link
+					v-for="(val, key) in nav"
+					:key="key"
+					class="mx-5 font-weight-bold cursor-pointer"
+				>
+					{{ val.name }}
+				</nuxt-link>
+			</div>
+		</v-app-bar>
+
+		<v-app-bar
+			fixed
+			app 
+			absolute
+			elevation="0"
+			class="px-5"
+		>
+			<v-btn
+				v-for="(val, key) in button"
 				:key="key"
-				class="mx-5 font-weight-bold cursor-pointer"
+				class="font-weight-bold ms-3 text-darkblue"
+				variant="outlined"
+				color="darkblue"
 			>
 				{{ val.name }}
-			</nuxt-link>
-		</div>
-	</v-app-bar>
-
-	<v-app-bar
-		fixed
-		app 
-		absolute
-		elevation="0"
-		class="px-5"
-	>
-		<v-btn
-			v-for="(val, key) in button"
-			:key="key"
-			class="text-none font-weight-bold ms-3"
-			variant="outlined"
-			color="darkblue"
-			:href="val.link"
-		>
-			{{ val.name }}
-		</v-btn>
-	</v-app-bar>
+			</v-btn>
+			<v-btn variant="outlined" color="purple-lighten-5">hi</v-btn>
+		</v-app-bar>
+	</div>
 </template>
 
 <script>

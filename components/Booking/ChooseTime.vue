@@ -1,6 +1,6 @@
 <template>
 	<div class="px-2 py-3">
-		<v-card class="px-2 py-3 mb-3" elevation="0"rounded v-for="(lake, index) in lakes" :key="index">
+		<v-card class="px-2 py-3 mb-3" elevation="0" rounded="lg" v-for="(lake, index) in lakes" :key="index">
       <v-card-title class="text-h5 font-weight-bold">
 				Lake {{ lake.name }} - Dock {{ lake.dock }}
 			</v-card-title>

@@ -7,6 +7,9 @@ $title-font: Arial !default;
 .v-application {
 	font-family: $body-font-family, sans-serif !important;
 }
+* {
+    letter-spacing: 0.01px !important;
+}
 
 :root {
 	--lightgreen: #dfffa5;
