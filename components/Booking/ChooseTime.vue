@@ -67,6 +67,10 @@ export default {
 	},
 	methods: {
 		handleClick(boatName, day) {
+			if(this.selectedDate === `${boatName}.${day}`) {
+				this.selectedDate = null;
+				return;
+			}
 			this.selectedDate = `${boatName}.${day}`;
 		},
 		color(boatName, day) {
