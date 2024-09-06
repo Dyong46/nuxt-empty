@@ -2,6 +2,7 @@
 	<div>
 		<v-app>
 			<v-main>
+				<client-nav-bar />
 				<div>
 					<slot />
 				</div>
