@@ -9,9 +9,7 @@
 		</v-col>
 		<v-col cols="10">
 			<v-sheet class="pa-2" rounded color="blue-lighten-5">
-				<v-sheet rounded height="2000">
-					123
-				</v-sheet>
+				<booking-choose-time />
 			</v-sheet>
 		</v-col>
 	</v-layout>
