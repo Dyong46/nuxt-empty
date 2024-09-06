@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Outfit");
+// @import url("https://fonts.googleapis.com/css2?family=Outfit");
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap");
 
-
-$body-font-family: Arial !default;
+$body-font-family: "Source Code Pro" !default;
 $heading-font-family:"Outfit" !default;
 $title-font: Arial !default;
 .v-application {
@@ -10,7 +10,7 @@ $title-font: Arial !default;
 
 :root {
 	--lightgreen: #dfffa5;
-	--darkblue: #1a2444;
+	--darkblue: #113873;
 	--primary-color: #1a2444;
 	--secondary-color: #bcefff;
 	--main-color-blue : #C4F1FF5F ;
