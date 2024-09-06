@@ -52,11 +52,14 @@ export default defineNuxtConfig({
 				themes: {
 					myTheme: {
 						colors: {
-							
+							colorBtn: '#123873',
+							colorBtnInput: '#BBBBBB',
+
 						}
 					}
 				}
-			}
+			},
+			
 		}
 	},
 	vue: {
