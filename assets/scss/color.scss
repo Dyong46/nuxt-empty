@@ -1,0 +1,95 @@
+.v-application a {
+	color: var(--base) !important;
+}
+
+
+$colors: (
+    'white':#ffffff,
+    'light-white':#f8fafc,
+    'red': #ff0000,
+    'green': #00ff00,
+    'dark-primary':#123873,
+    'midle-primary':#04B6cc,
+    'primary':#0085A1,
+    'light-primary':#CDF0F5,
+    'black': #000000,
+    'none':transparent
+);
+
+
+
+@each $color-name, $color-value in $colors {
+    .text-color-#{$color-name} {
+        color: $color-value !important;
+    }
+}
+
+
+@each $color-name, $color-value in $colors {
+    .bg-color-#{$color-name} {
+        background-color: $color-value !important;
+    }
+}
+@each $color-name, $color-value in $colors {
+    .border-color-#{$color-name} {
+        border-color: $color-value !important;
+    }
+}
+
+
+@for $i from 0 through 50 {
+    .border-radius-#{$i} {
+      border-radius: #{$i}px !important;
+    }
+  
+    .border-radius-t-l-#{$i} {
+      border-top-left-radius: #{$i}px !important;
+    }
+  
+    .border-radius-t-r-#{$i} {
+      border-top-right-radius: #{$i}px !important;
+    }
+  
+    .border-radius-b-l-#{$i} {
+      border-bottom-left-radius: #{$i}px !important;
+    }
+  
+    .border-radius-b-r-#{$i} {
+      border-bottom-right-radius: #{$i}px !important;
+    }
+  }
+$max-border-width: 10;
+@for $i from 1 through $max-border-width{
+	.border-width-#{$i} {
+		border-width: #{$i * 2}px !important;
+    }
+}
+
+// SCSS for border color
+@each $color-name, $color-value in $colors {
+    .border-color-#{$color-name} {
+        border-color: $color-value !important;
+    }
+}
+
+
+@function px($value) {
+  @return $value * 1px;
+}
+
+@each $position in (top, left, right,bottom) {
+  @for $i from 0 through 100 {
+    .abs-#{$position}-#{$i} {
+      #{$position}: px($i) !important;
+    }
+  }
+}
+
+
+
+$max-weight: 9; // 100 to 900 with step of 100
+@for $i from 1 through $max-weight {
+    .text-weight-#{$i * 100} {
+        font-weight: #{$i * 100};
+    }
+}

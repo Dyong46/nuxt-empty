@@ -1,0 +1,5 @@
+@for $positionValue from 1 through 5  {
+    .z-#{$positionValue * 10} {
+        z-index: #{$positionValue * 10} !important;
+    } 
+}

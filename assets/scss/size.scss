@@ -1,0 +1,21 @@
+@for $size from 0 through 20 {
+	.vh-#{$size * 5} {
+		height: $size * 5vh;
+	}
+
+	.min-vh-#{$size * 5} {
+		min-height: $size * 5vh;
+	}
+
+	.vw-#{$size * 5} {
+		width: $size * 5vw;
+	}
+}
+
+.width-auto {
+	width: auto !important;
+}
+
+.height-auto {
+	height: auto !important;
+}

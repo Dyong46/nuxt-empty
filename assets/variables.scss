@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit");
+
+
+$body-font-family: Arial !default;
+$heading-font-family:"Outfit" !default;
+$title-font: Arial !default;
+.v-application {
+	font-family: $body-font-family, sans-serif !important;
+}
+
+:root {
+	--lightgreen: #dfffa5;
+	--darkblue: #1a2444;
+	--primary-color: #1a2444;
+	--secondary-color: #bcefff;
+	--main-color-blue : #C4F1FF5F ;
+	--main-color-drown : #fcfaf5 ;
+}
