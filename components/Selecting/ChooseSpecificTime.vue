@@ -3,12 +3,12 @@
    <v-card class="pa-3 me-1">
       <v-row>
         <v-col  v-for="(info, index) in infoList" :key="index" cols="12" md="3" lg="2">
-          <v-icon v-if="index === 0 || index === 3" class="mr-2">{{ info.icon }}</v-icon>  
+          <v-icon v-if="index === 0 || index === 3">{{ info.icon }}</v-icon>  
           <strong> {{ info.name }}</strong> 
            <span v-if="index === 0">
-            <a class="text-body-1 mr-2" href="#">{{ info.text }}</a>
+            <a class="text-body-1" href="#">{{ info.text }}</a>
            </span>
-           <span class="ms-2 mr-2 text-body-2" v-else> 
+           <span class="ms-2 text-body-2" v-else> 
             {{ info.text }}
            </span>
         </v-col>
@@ -33,27 +33,24 @@
           <thead>
             <tr>
               <th id="table" style="border:none"></th>
-              <th class="font-weight-black text-body-1" id="table"> Member</th>
+              <th class="font-weight-black text-body-1 pl-16" id="table"> Member</th>
               <th class="font-weight-black text-body-1" id="table">Non-member</th>
             </tr>
           </thead>
           <tbody>
             <tr v-for="(time, index) in times" :key="index">
-              <td id="table" style="border-right:2px solid #123873;">
-                <v-responsive>
-                    <v-btn   block class="font-weight-bold  text-lg-subtitle-1 text-xs-caption d-flex flex-wrap" rounded="lg"  style="border: 3px solid #123873; color:#123873;">
-                    <v-icon  size="x-large" class="font-weight-black ">mdi-clock-outline</v-icon>  
-                    <span >{{ time }}</span>
+              <td id="table" style="width: 250px; border-right:2px solid #123873;">
+                <v-btn flat class="mx-auto text-lg-subtitle-1 text-xs-caption" height="40px" rounded="lg"  style="border: 2px solid #123873; color:#123873;">
+                  <v-icon  size="x-large" class="font-weight-black ">mdi-clock-outline</v-icon>  
+                  <span >{{ time }}</span>
                 </v-btn>
-                </v-responsive>
-           
               </td>
-              <td class="font-weight-bold text-subtitle-1" id="table">{{ prices[index] }}</td>
-              <td class="font-weight-bold text-subtitle-1 " id="table">{{ prices[index] }}</td>
+              <td style="width: 250px;" class="text-subtitle-1 pl-16" id="table">{{ prices[index] }}</td>
+              <td class="text-subtitle-1 " id="table">{{ prices[index] }}</td>
             </tr>
           </tbody>
         </v-table>
-  
+
     </v-responsive>
      
    </v-card>
@@ -99,6 +96,9 @@
   #table {
     border: none;
     color: #123873;
+  }
+  ::v-deep .v-table > .v-table__wrapper > table {
+    width: auto;
   }
   </style>
   
