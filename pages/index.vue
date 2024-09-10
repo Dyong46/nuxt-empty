@@ -1,9 +1,9 @@
 <template>
-	<v-layout class="px-5" justify-center align-center>
-			<v-col cols="3" flex-grow-0 flex-shrink-0>
+	<div  :class="mdAndDown  ? 'flex-column' : ' ' " class="px-5 d-flex">
+			<v-col cols="12" md="12"  lg="3" flex-grow-0 flex-shrink-0>
 				<stepper-nav ref="stepper"></stepper-nav>
 			</v-col>
-		<v-col cols="9">
+		<v-col cols="12" md="12"  lg="9" >
 			<!-- <v-sheet class="pa-1" rounded="lg" color="#F5F5F5">
 				<div class="d-flex align-center">
 					<h2 class="my-4 ml-3" style="color: #123873;">Selected Trip</h2>
@@ -23,7 +23,7 @@
 
 				<!-- Confirm Trip Detail -->
 
-			<!-- <v-sheet class="pa-1" rounded="lg" color="#F5F5F5">
+			<v-sheet class="pa-1" rounded="lg" color="#F5F5F5">
 				<div class="d-flex align-center">
 					<h2 class="my-4 ml-3" style="color: #123873;">Confirm Your Trip Details</h2>
 					<v-spacer></v-spacer>
@@ -38,10 +38,11 @@
 				</div>
 
 			<confirming-trip-details />
-			</v-sheet> -->
+			</v-sheet>
 
 			<!-- Selecting Trip -->
-			<v-sheet class="pa-1" rounded="lg" color="#F5F5F5">
+
+			<!-- <v-sheet class="pa-1" rounded="lg" color="#F5F5F5">
 				<div class="d-flex align-center">
 					<h2 class="my-4 ml-3" style="color: #123873;">Selected Trip</h2>
 					<v-spacer></v-spacer>
@@ -56,20 +57,21 @@
 				</div>
 
 			<selecting-choose-specific-time />
-			</v-sheet>
+			</v-sheet> -->
 
 		</v-col>
-	</v-layout>
+	</div>
 </template>
 
-<script>
+<script setup>
 import { mapFields } from "vuex-map-fields";
-export default {
-	name: "IndexPage",
-	computed: {
+import { useDisplay } from "vuetify";
+const {smAndDown, mdAndDown} = useDisplay()
+	const name = "IndexPage",
+	computed = {
 		...mapFields("booking", ["currentStep"])
 	},
-	methods: {
+	methods = {
 		back () {
 			this.$refs.stepper.prevStep()
 		},
@@ -77,5 +79,4 @@ export default {
 			this.$refs.stepper.nextStep()
 		},
 	}
-};
 </script>
